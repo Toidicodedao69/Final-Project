@@ -1,0 +1,4 @@
+1. Data Structure and Patterns: Design and implementation
+2. Intro to AI: Algorithmic problem soving and basic concepts of AI
+3. Data Viz: CODE interactive data visualisation for webpages using D3 (a JavaScript library)
+4. Knowledge management and Analytics: contemporary enterprise knowledge management and organisational learning as a critical factor contributing to a sustainable competitive advantage in business
