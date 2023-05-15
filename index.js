@@ -1,6 +1,4 @@
-function chart(dataset) {
-    var width = 700;
-    var height = 300;
+function chart(dataset, canvas) {
 
     var padding = 50;
     // Organize the data set by categories to generate stacked bar chart
@@ -8,11 +6,6 @@ function chart(dataset) {
                     .keys(["temp_visa", "aus_citizen", "perma_visa", "nz_citizen", "unknown"]);
     
     var series = stack(dataset);
-
-    var canvas = d3.select("#third")
-                    .append("svg")
-                    .attr("width", width)
-                    .attr("height", height);
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -96,7 +89,7 @@ function chart(dataset) {
     
 };
 
-function readFile(filename) {
+function readFile(filename, canvas) {
     d3.csv(filename, function(d) {
         return {
             year: d.Year,
@@ -112,28 +105,36 @@ function readFile(filename) {
         // Check the input data
         console.table(dataset, ["year", "temp_visa", "aus_citizen", "perma_visa", "nz_citizen", "unknown"]);
 
-        chart(dataset);
+        chart(dataset, canvas);
     });
 }
 
 function init() {
+    var width = 700;
+    var height = 300;
+
     var dataset;
     var filename = "Overseas migrant arrivals by major Visa groups.csv";
 
+    var canvas = d3.select("#third")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+                
     d3.select("#arrival")
         .on("click", function() {
             filename = "Overseas migrant arrivals by major Visa groups.csv";
-            d3.select("svg").remove();
-            readFile(filename);
+            canvas.selectAll("*").transition().duration(500).remove();
+            readFile(filename, canvas);
         });
     d3.select("#departure")
         .on("click", function() {
             filename = "Overseas migrant departures by major Visa groups.csv";
-            d3.select("svg").remove();
-            readFile(filename);
+            canvas.selectAll("*").transition().duration(500).remove();
+            readFile(filename, canvas);
         });
     // Load data from csv file
-    readFile(filename);
+    readFile(filename, canvas);
     
 }
 window.onload = init;
