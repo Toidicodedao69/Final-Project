@@ -1,0 +1,15 @@
+.line1{
+    fill: none;
+    stroke: slategray;
+    stroke-width: 3;
+}
+.line2{
+    fill: none;
+    stroke: red;
+    stroke-width: 3;
+}
+.line3{
+    fill: none;
+    stroke-width: 3;
+    stroke: green;
+}
