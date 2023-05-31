@@ -1,64 +1,3 @@
-function BarChart(dataset, canvas) {
-    var width = 500;
-    var height = 300;
-
-    var padding = 50;
-    canvas.selectAll("*").remove();
-    var xScale = d3.scaleBand()
-                    .domain(d3.range(dataset.length))
-                    .rangeRound([padding, width-padding])
-                    .paddingInner(0.2); // padding value = 5% of the band width
-                    
-    var yScale = d3.scaleLinear()
-                    .domain([0, d3.max(dataset, function (d) {
-                        return d;       
-                        })
-                    ])
-                    .range([height-padding, padding]);
-
-    var xAxis = d3.axisBottom()
-                .ticks()
-                .scale(xScale);
-
-    var yAxis = d3.axisLeft()
-                .ticks()
-                .scale(yScale);
-                    
-
-    // Draw X Axis
-    canvas.append("g")
-        .attr("transform", "translate(0, " + (height - 10) + ")")
-        .call(xAxis);
-    
-    // Draw Y Axis
-    canvas.append("g")
-        .attr("transform", "translate(" + (padding - 5) + ", 0)")
-        .call(yAxis);
-                        
-    canvas.selectAll("rect")
-            .data(dataset)
-            .enter()
-            .append("rect")
-            .attr("x", function(d, i) {
-                return xScale(i);
-            })
-            .attr("y", function(d) {
-                return height - yScale(d);
-            })
-            .attr("width", function(d, i) {
-                return xScale.bandwidth();
-            })
-            .attr("height", function(d) {
-                return yScale(d);
-            })
-            .attr("fill", "orange");
-};
-
-function Update(dataset, canvas) {
-    canvas.selectAll("rect")
-        .data(dataset);
-}
-
 function init() {
     var w = 450;
     var h = 450;
@@ -71,7 +10,7 @@ function init() {
     var dataset;
 
     var dataset2;       // Data for all visa types
-    var data;       // Data for a single visa type
+    var bar_data;       // Data for a single visa type
     
     var svg = d3.select("#third")
                 .append("svg")
@@ -96,6 +35,7 @@ function init() {
         return d.percentage;
     });
 
+    // load bars data
     d3.csv("2017.csv", function(d) {
         return {
             type: d["Temporary Visas"],
@@ -110,12 +50,112 @@ function init() {
         };
     }).then(function(data) {
         dataset2 = data;
+
+        // Set default value
+        bar_data = [dataset2[0].NSW, dataset2[0].VIC, dataset2[0].QLD, dataset2[0].SA, dataset2[0].WA, dataset2[0].TAS, dataset2[0].NT, dataset2[0].ACT];
+        console.log(bar_data);
     });
-    
-    //load csv data
+
+    //load pie data
     d3.csv("Temporary_visas.csv").then(function(data) {
-        console.log(data);
         console.log(pie(data));
+
+        // Draw the default bar chart
+        var width = 500;
+        var height = 300;
+    
+        var padding = 50;
+        var xScale = d3.scaleBand()
+                        .domain(d3.range(bar_data.length))
+                        .rangeRound([padding, width-padding])
+                        .paddingInner(0.2); // padding value = 5% of the band width
+                        
+        var yScale = d3.scaleLinear()
+                        .domain([0, d3.max(bar_data, function (d) {
+                            return d;       
+                            })
+                        ])
+                        .range([height-padding, padding]);
+    
+        var xAxis = d3.axisBottom()
+                    .ticks(10)
+                    .scale(xScale);
+    
+        var yAxis = d3.axisLeft()
+                    .ticks(10)
+                    .scale(yScale);
+                        
+    
+        // Draw X Axis
+        canvas.append("g")
+            .attr("id", "x-axis")
+            .attr("transform", "translate(0, " + (height - 10) + ")")
+            .call(xAxis);
+        
+        // Draw Y Axis
+        canvas.append("g")
+            .attr("id", "y-axis")
+            .attr("transform", "translate(" + (padding - 5) + ", 0)")
+            .call(yAxis);
+                            
+        canvas.selectAll("rect")
+                .data(bar_data)
+                .enter()
+                .append("rect")
+                .attr("x", function(d, i) {
+                    return xScale(i);
+                })
+                .attr("y", function(d) {
+                    return height - yScale(d);
+                })
+                .attr("width", function(d, i) {
+                    return xScale.bandwidth();
+                })
+                .attr("height", function(d) {
+                    return yScale(d);
+                })
+                .attr("fill", "orange");
+
+        
+        // Update the bar graph with new data
+        function Update(new_data) {
+
+            // Update the scales
+            xScale.domain(d3.range(new_data.length));
+
+            yScale.domain([0, d3.max(new_data, function (d) {
+                return d;       
+                })
+            ]);
+
+            // Update Y Axis
+            canvas.select("#y-axis")
+                .transition()
+                .call(yAxis);
+
+            canvas.selectAll("rect")
+                .data(new_data)
+                .merge(canvas)
+                .transition()
+                .ease(d3.easeLinear)
+                .duration(1000)
+                .attr("x", function(d, i) {
+                    return xScale(i);
+                })
+                .attr("y", function(d) {
+                    return height - yScale(d);
+                })
+                .attr("width", function(d, i) {
+                    return xScale.bandwidth();
+                })
+                .attr("height", function(d) {
+                    return yScale(d);
+                })
+                .attr("fill", "orange");
+
+
+            canvas.exit().remove();
+        }
 
         var arcs = svg.selectAll("g.arc")
                        .data(pie(data))
@@ -148,12 +188,12 @@ function init() {
             //code for bar chart
                 for(var i=0; i < dataset2.length; i++) {
                     if (dataset2[i].type == d.data.types) {
-                        data = [dataset2[i].NSW, dataset2[i].VIC, dataset2[i].QLD, dataset2[i].SA, dataset2[i].WA, dataset2[i].TAS, dataset2[i].NT, dataset2[i].ACT];
-                        console.log(data);
+                        bar_data = [dataset2[i].NSW, dataset2[i].VIC, dataset2[i].QLD, dataset2[i].SA, dataset2[i].WA, dataset2[i].TAS, dataset2[i].NT, dataset2[i].ACT];
+                        console.log(bar_data);
                         break;
                     }
                 }
-                BarChart(data, canvas);
+                Update(bar_data);
 
             });
             
@@ -168,10 +208,6 @@ function init() {
             .style("font-size", 17);
     });
 
-    // function PieChart(piee) {
-        
-
-    // }
 }
 
 
