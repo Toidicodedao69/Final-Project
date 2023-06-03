@@ -1,0 +1,68 @@
+{
+"state_name": ["NSW","VIC","QLD","SA","WA","TAS","NT","ACT"],
+"properties": [
+{
+    "year": 2017, 
+    "data": [
+        {
+            "visa_type": "Student - vocational education and training",
+            "value": [9180,5580,2580,740,1190,90,50,230]
+        },
+        {"visa_type": "Student - higher education", "value": [38680,38430,13010,5530,6100,1230,330,3230]},
+        {"visa_type": "Student - other", "value": [11680,9020,6360,1520,1640,280,60,900]},
+        {"visa_type": "Skilled (temporary)", "value": [11380,7620,3330,1010,2650,200,370,380]},
+        {"visa_type": "Working holiday", "value": [19270,13160,10550,1070,5220,470,890,350]},
+        {"visa_type": "Visitors", "value": [30860,25930,10500,2630,7160,590,640,1120]},
+        {"visa_type": "Other (temporary)", "value": [4090,4020,1880,560,950,150,200,470]}
+    ]
+},
+{
+    "year": 2018,
+    "data": [
+        {"visa_type": "Student - vocational education and training", "value": [10630,5590,3960,820,1170,110,160,210]},
+        {"visa_type": "Student - higher education", "value": [37440,41990,13760,6330,7710,1360,290,2420]},
+        {"visa_type": "Student - other", "value": [10600,8950,6460,1520,1820,240,100,700]},
+        {"visa_type": "Skilled (temporary)", "value": [13780,9240,4230,1060,3200,320,310,480]},
+        {"visa_type": "Working holiday", "value": [17700,12870,10210,1120,5560,490,880,260]},
+        {"visa_type": "Visitors", "value": [33820,29110,12840,3910,8530,740,930,1350]},
+        {"visa_type": "Other (temporary)", "value": [4420,4440,1870,680,1130,220,250,410]}
+    ]
+},
+{
+    "year": 2019,
+    "data": [
+        {"visa_type": "Student - vocational education and training", "value": [4360,3080,2250,570,860,110,60,120]},
+        {"visa_type": "Student - higher education", "value": [24240,27390,9710,5800,6210,830,250,1530]},
+        {"visa_type": "Student - other", "value": [7600,6670,5260,1330,1420,200,70,520]},
+        {"visa_type": "Skilled (temporary)", "value": [9430,5850,3390,720,2790,130,180,350]},
+        {"visa_type": "Working holiday", "value": [15890,11720,8370,1050,5870,380,480,190]},
+        {"visa_type": "Visitors", "value": [40660,38240,16420,6050,12050,1080,1060,2190]},
+        {"visa_type": "Other (temporary)", "value": [4880,6040,3170,1080,1490,1350,330,340]}
+    ]
+},
+{
+    "year": 2020,
+    "data": [
+        {"visa_type": "Student - vocational education and training", "value": [60,20,20,10,10,10,0,0]},
+        {"visa_type": "Student - higher education", "value": [320,160,130,40,30,10,20,20]},
+        {"visa_type": "Student - other", "value": [260,130,130,30,50,20,10,50]},
+        {"visa_type": "Skilled (temporary)", "value": [4560,1400,1320,340,1150,60,60,60]},
+        {"visa_type": "Working holiday", "value": [560,160,180,30,80,10,10,10]},
+        {"visa_type": "Visitors", "value": [3700,1480,1160,290,810,70,70,120]},
+        {"visa_type": "Other (temporary)", "value": [4180,1040,2430,720,890,620,390,130]}
+    ]
+},
+{
+    "year": 2021,
+    "data": [
+        {"visa_type": "Student - vocational education and training", "value": [10390,4800,2360,950,820,180,140,320]},
+        {"visa_type": "Student - higher education", "value": [37810,35080,9460,6250,4350,920,360,2640]},
+        {"visa_type": "Student - other", "value": [6810,6210,3750,1200,1140,170,80,760]},
+        {"visa_type": "Skilled (temporary)", "value": [9170,5750,3050,860,3000,200,240,200]},
+        {"visa_type": "Working holiday", "value": [5670,3310,2700,340,1110,60,220,70]},
+        {"visa_type": "Visitors", "value": [14010,12710,5420,1970,3340,380,380,800]},
+        {"visa_type": "Other (temporary)", "value": [7950,7630,4900,1420,2440,1550,1480,590]}
+    ]
+}
+]
+}

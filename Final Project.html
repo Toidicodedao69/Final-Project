@@ -5,45 +5,128 @@
 	<meta charset="UTF-8"/>
 	<meta name="description"	content="Data Visualisation Project"/>
 	<meta name="keywords"		  content="HTML, CSS"/>
-	<meta name="author"			  content="Group 8"/>
+	<meta name="author"			  content="Kim Duong Pham, Nghia Hieu Pham, Thanh Phat Vo"/>
 
 	<title>Australia Migration & COVID-19</title>
-	<!--Insert description of exercise  -->
 
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script src="index.js"></script>
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="script/index.js"></script>
+	<link rel="stylesheet" href="styles\style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 
 <body>
+		<!--Define Header section -->
+	<section class="header" id="header">
+		<nav id="navbar">
+				<ul id="menu">
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#firstchart">First</a></li>
+					<li><a href="#secondchart">Second</a></li>
+				</ul>
+		</nav>
+		<div class="text-box">
+			<h1>Migration to Australia before, during, and after COVID-19</h1>
+			<p>Visualization and analysis</p>
+			<div class="button-text">
+			  <div class="learn-btn">
+				<span></span><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=eXV_35w-fkq4REICgPU4Wa7qTkxt4z1Ar8V6viYfKclUNlo3MEwzRkNTWVNNQTNNRDVXUTlTS0lBQi4u">Complete our survey</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</section>
+			<!--Introduction section -->
 
-	<h1>Migration to Australia before, during, and after COVID-19</h1>
+	<section class="intro" id="intro">
+		<h1>TOPIC INTRODUCTION - MIGRATION</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit ante sed ligula sagittis, non pellentesque libero volutpat. Sed in cursus urna, vitae lobortis lacus. Ut rutrum arcu eget ante iaculis, sit amet pulvinar augue convallis. Maecenas sollicitudin scelerisque lacus sed bibendum. Vivamus et augue pharetra urna varius aliquam a at libero. Mauris et erat vel tortor molestie sollicitudin. Curabitur at convallis enim, at luctus mauris. Aenean blandit turpis ut leo rhoncus lacinia. Aliquam rutrum elit et leo dignissim, at semper orci fringilla.
+
+			Praesent metus justo, venenatis sit amet commodo nec, placerat et velit. Suspendisse nec sapien volutpat dui dapibus vulputate eget at mi. Nullam ullamcorper, justo eu mattis consectetur, nibh turpis vestibulum dolor, vitae tincidunt neque libero non nulla. Nullam ac tellus diam. Suspendisse egestas pharetra tincidunt. Ut ac lectus vestibulum, varius orci faucibus, hendrerit tellus. Quisque elementum ipsum eleifend suscipit ultrices. Donec in gravida ante. Nunc maximus lectus et ligula interdum sollicitudin. Proin pretium justo ipsum. Mauris quis mauris sed ante interdum tempor. Etiam eu est ac tortor venenatis condimentum. Quisque id odio justo. Pellentesque eget orci diam.
+			
+			Mauris semper nisl sit amet tristique porta. Suspendisse sagittis lacus id finibus malesuada. Nunc lobortis nisl ex, nec tempor enim blandit eget. In mattis leo ipsum, non suscipit turpis rhoncus non. Aliquam viverra a ante vitae malesuada. Aenean risus mauris, volutpat at finibus ac, pellentesque sed nunc. Nam ultrices sem justo, dapibus dictum eros fermentum ac.
+			
+			Integer dictum, est a mollis volutpat, nisi urna tempus turpis, quis fermentum odio mi sed ex. Pellentesque id leo metus. Morbi augue ante, posuere et felis et, ullamcorper convallis dolor. Donec vitae lacinia lacus. Suspendisse vitae ligula orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus orci sem, aliquet sed sem in, ullamcorper convallis dui. Maecenas dolor est, molestie et lorem et, rutrum dictum nisl. Fusce placerat eleifend ligula in aliquet. Aliquam sodales augue in ex sodales dignissim. Integer tempor sapien vitae ex tincidunt lacinia. Cras eget urna vel lacus mollis commodo id faucibus nibh. Duis vulputate leo nec libero viverra bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			
+			Integer tempus elit eget placerat convallis. Donec eu neque felis. Cras justo metus, tempor eget accumsan nec, suscipit ut metus. Nunc efficitur turpis elit, a ultricies lorem venenatis nec. Phasellus a augue ex. Ut massa tortor, aliquam ut rhoncus eget, eleifend a nisi. Nulla dapibus libero elit, egestas tempor diam pharetra volutpat. Duis at leo lacus.</p>
+	</section>
+
+	<!--First Chart section -->
+
+	<section class="chart" id="firstchart">
+		<div id="first"></div>
+		<h2>First Visualisation</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit ante sed ligula sagittis, non pellentesque libero volutpat. Sed in cursus urna, vitae lobortis lacus. Ut rutrum arcu eget ante iaculis, sit amet pulvinar augue convallis. Maecenas sollicitudin scelerisque lacus sed bibendum. Vivamus et augue pharetra urna varius aliquam a at libero. Mauris et erat vel tortor molestie sollicitudin. Curabitur at convallis enim, at luctus mauris. Aenean blandit turpis ut leo rhoncus lacinia. Aliquam rutrum elit et leo dignissim, at semper orci fringilla.
+
+				Praesent metus justo, venenatis sit amet commodo nec, placerat et velit. Suspendisse nec sapien volutpat dui dapibus vulputate eget at mi. Nullam ullamcorper, justo eu mattis consectetur, nibh turpis vestibulum dolor, vitae tincidunt neque libero non nulla. Nullam ac tellus diam. Suspendisse egestas pharetra tincidunt. Ut ac lectus vestibulum, varius orci faucibus, hendrerit tellus. Quisque elementum ipsum eleifend suscipit ultrices. Donec in gravida ante. Nunc maximus lectus et ligula interdum sollicitudin. Proin pretium justo ipsum. Mauris quis mauris sed ante interdum tempor. Etiam eu est ac tortor venenatis condimentum. Quisque id odio justo. Pellentesque eget orci diam.
+				
+				Mauris semper nisl sit amet tristique porta. Suspendisse sagittis lacus id finibus malesuada. Nunc lobortis nisl ex, nec tempor enim blandit eget. In mattis leo ipsum, non suscipit turpis rhoncus non. Aliquam viverra a ante vitae malesuada. Aenean risus mauris, volutpat at finibus ac, pellentesque sed nunc. Nam ultrices sem justo, dapibus dictum eros fermentum ac.
+				
+				Integer dictum, est a mollis volutpat, nisi urna tempus turpis, quis fermentum odio mi sed ex. Pellentesque id leo metus. Morbi augue ante, posuere et felis et, ullamcorper convallis dolor. Donec vitae lacinia lacus. Suspendisse vitae ligula orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus orci sem, aliquet sed sem in, ullamcorper convallis dui. Maecenas dolor est, molestie et lorem et, rutrum dictum nisl. Fusce placerat eleifend ligula in aliquet. Aliquam sodales augue in ex sodales dignissim. Integer tempor sapien vitae ex tincidunt lacinia. Cras eget urna vel lacus mollis commodo id faucibus nibh. Duis vulputate leo nec libero viverra bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+				
+				Integer tempus elit eget placerat convallis. Donec eu neque felis. Cras justo metus, tempor eget accumsan nec, suscipit ut metus. Nunc efficitur turpis elit, a ultricies lorem venenatis nec. Phasellus a augue ex. Ut massa tortor, aliquam ut rhoncus eget, eleifend a nisi. Nulla dapibus libero elit, egestas tempor diam pharetra volutpat. Duis at leo lacus.</p>
+	</section>
+
+		<!--Second chart section -->
+
+	<section class="chart" id="secondchart">
+		<h2>Second Visualisation</h2>
 	
+		<div class="button3">
+			<button class="btn btn1" id="pie2017">2017-2018</button>
+			<button class="btn btn2" id="pie2018">2018-2019</button>
+			<button class="btn btn3" id="pie2019">2019-2020</button>
+			<button class="btn btn4" id="pie2020">2020-2021</button>
+			<button class="btn btn5" id="pie2021">2021-2022</button>
+		</div>
 
-	<div id="first"> 
-        <h2>First Visualisation</h2>
-	</div>
-    <div id="second"> 
-        <h2>Second Visualisation</h2>
+	 	<div id="second"></div>
 
-	</div>
-    <div id="third"> 
-        <h2>Third Visualisation</h2>
-		<button type="button" id="arrival">2017</button>
-		<button type="button" id="departure">2018</button>
-	</div>
-	<div id="side"></div>	
+		
+	</div>	
+
+	</section>
+
+	<!--Footer section -->
 
 	<footer>
-        <p>
-            COS30045 Data Visualisation - Semester 1 2023
-            <strong>
-            <br>Group 8
-            <br>Kim Duong Pham
-            <br>Nghia Hieu Pham
-            <br>Thanh Phat Vo
-            </strong>
-        </p>
-	</footer>
+		<div class="fcontainer">
+		  <div class="row">
+			<div class="footer-col">
+			  <h4>Our Group Members</h4>
+			  <ul>
+				<li>
+				  <a href="mailto:103533868 @student.swin.edu.au">103533868 - Nghia Hieu Pham</a>
+				</li>
+				<li>
+				  <a href="mailto:103792850@student.swin.edu.au">103792850 - Kim Duong Pham</a>
+				</li>
+				<li>
+				  <a href="mailto:103815537@student.swin.edu.au">103815537 - Thanh Phat Vo</a>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </footer>
 
+	  
+	<!--Script Section -->
+
+	  <script>
+		var navbar = document.getElementById("navbar");
+		var menu = document.getElementById("menu");
+
+		window.onscroll = function() {
+			if(window.pageYOffset >= menu.offsetTop) {
+				navbar.classList.add("sticky");
+			}
+			else{
+				navbar.classList.remove("sticky");
+			}
+		}
+
+	  </script>
 </body>
 </html>
