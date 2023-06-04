@@ -17,13 +17,7 @@ html {
 a {
     text-decoration: none;
 }
-#second_bar {
-  float: right;
-}
-.bar_label {
-  font-size: 12px;
-  font-weight: bold;
-}
+
   /*------------------------HEADER CONTENT-------------- */
 .header {
     min-height: 100vh;
@@ -285,6 +279,20 @@ nav.sticky{
     transform: scaleY(1);
 }
 
+#second_bar {
+  float: right;
+}
+
+.bar_label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#second_bar_title, #second_pie_title {
+  font-style: italic;
+  font-size: 12px;
+}
+
 div.tooltip-pie {
     position: absolute;
     text-align: center;
@@ -295,4 +303,15 @@ div.tooltip-pie {
     border-radius: 8px;
     pointer-events: none;
     font-size: 1.3rem;
+}
+div.tooltip-bar {
+  position: absolute;
+  text-align: center;
+  padding: .5rem;
+  background: #FFFFFF;
+  color: #313639;
+  border: 1px solid #313639;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: 0.75rem;
 }
