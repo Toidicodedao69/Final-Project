@@ -226,9 +226,28 @@ nav.sticky{
     padding: 10px;
   }
 
+      /*------------------------VISUALISATION SECTIONs FORMATTING-------------- */
+      .chart {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: 600;
+      }
+    
+      p {
+        color: #000;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        padding: 10px;
+      }
 
 
-    /*------------------------THIRD VIZ BUTTONS-------------- */
+    /*------------------------SECOND VIZ BUTTONS-------------- */
 .button3 {
     text-align: left;
     margin-top: 10px;

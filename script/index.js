@@ -31,7 +31,9 @@ function init() {
     }
     
     let zoom = d3.zoom()
-                .on('zoom', handleZoom);
+                .on('zoom', handleZoom)
+                .translateExtent([[0, 0], [w, h]])
+                .scaleExtent([1, 5]); //limits the zoom range
     
     d3.select('svg')
         .call(zoom);
