@@ -6,6 +6,7 @@ function init() {
     
     var svg = d3.select("#second")
                 .append("svg")
+                .attr("id", "pie_chart")
                 .attr("width", w)
                 .attr("height", h)
                 .append("g")
@@ -35,7 +36,7 @@ function init() {
                 .translateExtent([[0, -h/5], [w, h]])
                 .scaleExtent([1, 5]); //limits the zoom range
     
-    d3.select('svg')
+    d3.select('#pie_chart')
         .call(zoom);
 
     // Bar graph's properties
@@ -47,8 +48,6 @@ function init() {
     
     // Color scale for the bar chart
     var bar_color; 
-
-
 
     var canvas = d3.select("#second")
                 .append("svg")
@@ -71,7 +70,7 @@ function init() {
     var state_name;
 
     // Load bars graph data 
-    d3.json("../sources/bar_data.json").then(function(json){
+    d3.json("./sources/bar_data.json").then(function(json){
 
         bar_data = json;
         state_name = bar_data.state_name;
@@ -248,7 +247,7 @@ function init() {
     function UpdatePie(period) {
 
         // Load pie data
-        d3.csv("../sources/temporary_visas_arrivals.csv").then(function(data) {
+        d3.csv("./sources/temporary_visas_arrivals.csv").then(function(data) {
 
             // Update the bar graph with new data
             function Update(new_data) {
@@ -429,4 +428,4 @@ function init() {
       });
 }
 
-window.onload = init;
+window.addEventListener("load",init);

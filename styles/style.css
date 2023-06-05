@@ -147,6 +147,7 @@ nav.sticky{
   }
   
   footer {
+    margin-top: 10%;
     background-color: #24262b;
     padding: 70px 0;
   }
@@ -238,6 +239,26 @@ nav.sticky{
         font-weight: 300;
         line-height: 22px;
         padding: 10px;
+      }
+      #first {
+        display: flex;
+      }
+      #first_geo {
+        float: left;
+      }
+      #first_loli {
+        float: right;
+        margin-top: 10%;
+      }
+      #state, #state_chart {
+        font-size: 12px;
+        font-style: italic;
+      }
+      #state {
+        padding-right: 50%;
+      }
+      #state_chart {
+        padding-left: 50%;
       }
 
 
